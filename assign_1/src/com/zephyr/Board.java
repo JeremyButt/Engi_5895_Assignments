@@ -1,3 +1,4 @@
+package com.zephyr;
 /**
  * An immutable class that represents the state of the 3×3 tic-tac-toe board.
  *
@@ -38,6 +39,7 @@ public class Board {
         /*
          * TBD
          */
+        return null;
     }
 
     /**
@@ -48,6 +50,7 @@ public class Board {
         /*
          * TBD
          */
+        return 'a';
     }
     
     /**
@@ -57,5 +60,6 @@ public class Board {
         /*
          * TBD
          */
+        return false;
     }
 }

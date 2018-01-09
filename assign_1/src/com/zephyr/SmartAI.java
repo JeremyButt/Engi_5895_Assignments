@@ -1,3 +1,4 @@
+package com.zephyr;
 /**
  * Realization of AI interface using smart strategy [NOT IMPLEMENTED].
  *

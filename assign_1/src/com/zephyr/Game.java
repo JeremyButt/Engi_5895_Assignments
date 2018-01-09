@@ -1,3 +1,4 @@
+package com.zephyr;
 /**
  * Represents the logic of the game in terms of detecting wins or draws.  Also
  * places new pieces for the human player or AI.
@@ -21,6 +22,7 @@ public class Game {
         /*
          * TBD
          */
+        return;
     }
 
     /**
@@ -30,6 +32,7 @@ public class Game {
         /*
          * TBD
          */
+        return null;
     }
 
     /**
@@ -39,6 +42,7 @@ public class Game {
         /*
          * TBD
          */
+        return null;
     }
     
     /**
@@ -55,6 +59,7 @@ public class Game {
         /*
          * TBD
          */
+        return false;
     }
 
     /**

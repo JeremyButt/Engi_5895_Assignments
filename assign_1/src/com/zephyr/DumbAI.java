@@ -1,3 +1,4 @@
+package com.zephyr;
 /**
  * Realization of AI interface using simplistic random placement strategy.
  *
@@ -30,5 +31,6 @@ public class DumbAI implements AI {
         /*
          * TBD
          */
+        return null;
     }
 }

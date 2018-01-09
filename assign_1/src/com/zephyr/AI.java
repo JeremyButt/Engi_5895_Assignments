@@ -1,3 +1,4 @@
+package com.zephyr;
 /**
  * Interface stipulating that an AI is a class that implements ‘chooseMove’.
  *

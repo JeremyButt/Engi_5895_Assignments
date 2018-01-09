@@ -1,3 +1,4 @@
+package com.zephyr;
 /**
  * ConsoleRunner:  Prompts the user to determine the parameters of the Game
  * constructor.  Creates a Game and manages the alternating calls to the
