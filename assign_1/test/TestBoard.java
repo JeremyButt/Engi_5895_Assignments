@@ -25,12 +25,13 @@ public class TestBoard {
                 assert board.get(i, j) == ' ';
             }
         }
+        assert board.isEmpty();
     }
 
     @Test
     public void testIsFull(){
         Board board = new Board();
-        assert !board.isFull();
+        assert board.isEmpty();
         for (int i=0; i<3; i++){
             for (int j=0; j<3; j++){
                 Move move = new Move(i, j,'X');
