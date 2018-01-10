@@ -31,6 +31,14 @@ public class TestBoard {
     public void testIsFull(){
         Board board = new Board();
         assert !board.isFull();
+        for (int i=0; i<3; i++){
+            for (int j=0; j<3; j++){
+                Move move = new Move(i, j,'X');
+                Board newBoard = new Board(board, move);
+                board = newBoard;
+            }
+        }
+        assert board.isFull();
     }
 
     @Test
@@ -39,6 +47,5 @@ public class TestBoard {
         Move move = new Move(1,1,'X');
         Board newBoard = new Board(board, move);
         assert newBoard.get(1,1) == 'X';
-
     }
 }
