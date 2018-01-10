@@ -56,7 +56,7 @@ public class Game {
      *
      */
     public boolean placePlayerPiece(int i, int j) {
-        Move move = new Move(i, j, playerIsX?'X':'Y');
+        Move move = new Move(i, j, this.playerIsX?'X':'Y');
         if((this.status == GameStatus.IN_PROGRESS) && ((i >= 0 && i <= 2)&&(j >= 0 && j <= 2)) && this.board.isSpaceEmpty(move)){
             this.board = new Board(this.board, move);
             return true;

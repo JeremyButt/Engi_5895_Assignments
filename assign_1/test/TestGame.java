@@ -15,7 +15,7 @@ public class TestGame {
     }
 
     @Test
-    public void test_getBoard(){
+    public void testGetBoard(){
         Game game = new Game(true, false);
         game.placePlayerPiece(0,0);
 
@@ -28,13 +28,13 @@ public class TestGame {
     }
 
     @Test
-    public void test_getStatus(){
+    public void testGetStatus(){
         Game game = new Game(true, false);
         Assertions.assertEquals(game.getStatus(), GameStatus.IN_PROGRESS,"Incorrect game status");
     }
 
     @Test
-    public void test_placePlayerPiece(){
+    public void testPlacePlayerPiece(){
         Game game = new Game(true, false);
         boolean placedSuccessfully = game.placePlayerPiece(0,0);
         assert(placedSuccessfully);
@@ -43,7 +43,7 @@ public class TestGame {
 
     @Disabled //remove after AI integration
     @Test
-    public void test_aiPlacePiece(){
+    public void testAIPlacePiece(){
         Game game = new Game(true, false);
         game.aiPlacePiece();
         assert(!game.getBoard().isEmpty() && !game.getBoard().isFull());
