@@ -27,9 +27,10 @@ public class Board {
      */
     public Board(Board other, Move move) {
         board = other.board;
-        board[move.getI()][move.getJ()] = move.getPiece();
+        if (move != null) {
+            board[move.getI()][move.getJ()] = move.getPiece();
+        }
     }
-
     /**
      * Convert to a string that shows the board's state.
      */
