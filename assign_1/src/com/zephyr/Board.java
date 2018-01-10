@@ -31,6 +31,19 @@ public class Board {
             this.board[move.getI()][move.getJ()] = move.getPiece();
         }
     }
+
+    /**
+     * Given a 'move' check if the space is empty
+     *
+     */
+    public boolean isSpaceEmpty(Move move){
+        if (this.board[move.getI()][move.getJ()]== ' '){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     /**
      * Convert to a string that shows the board's state.
      */
