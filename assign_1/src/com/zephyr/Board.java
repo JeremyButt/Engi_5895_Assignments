@@ -9,17 +9,15 @@ public class Board {
 
     private char[][] board = new char[3][3];
 
-    /*
-     * TBD: Create additional private members if useful.
-     */
-
     /**
      * Construct an empty board (contains all space char's).
      */
     public Board() {
-        /*
-         * TBD
-         */
+        for (int i=0; i<3; i++){
+            for (int j=0; j<3; j++){
+                board[i][j] = ' ';
+            }
+        }
     }
 
     /**
@@ -27,19 +25,25 @@ public class Board {
      * 'move' to generate this board's state.
      */
     public Board(Board other, Move move) {
-        /*
-         * TBD
-         */
+        board = other.board;
+        board[move.getI()][move.getJ()] = move.getPiece();
     }
 
     /**
      * Convert to a string that shows the board's state.
      */
     public String toString() {
-        /*
-         * TBD
-         */
-        return null;
+        String boardString = "";
+        for (int i=0; i<3; i++){
+            for (int j=0;j<3;j++){
+                boardString += board[i][j];
+                if (j == 2){
+                    boardString +='\n';
+                }
+            }
+
+        }
+        return boardString;
     }
 
     /**
@@ -47,10 +51,7 @@ public class Board {
      * be in the range [0, 2].
      */
     public char get(int i, int j) {
-        /*
-         * TBD
-         */
-        return 'a';
+        return board[i][j];
     }
     
     /**
@@ -59,10 +60,9 @@ public class Board {
     public boolean isFull() {
         for (int i=0; i<3; i++){
             for (int j=0; j<3;j++){
-                if(board[i][j]==' '){
+                if(board[i][j] == ' '){
                     return false;
                 }
-
             }
         }
         return true;

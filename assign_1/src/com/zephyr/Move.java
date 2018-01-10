@@ -2,7 +2,7 @@ package com.zephyr;
 /**
  * Represents a move (by the player or the AI) to a particular cell.
  *
- * STUDENTS: Nothing to change here.
+ * STUDENTS: A little to change here.
  *
  * @author Andrew Vardy
  */
@@ -18,6 +18,8 @@ public class Move {
      */
     public Move(int i, int j, char piece) {
         this.piece = piece;
+        this.i = i;
+        this.j = j;
     }
     
     public int getI() {
