@@ -11,6 +11,7 @@ public class Game {
     private Board board = new Board();
     private GameStatus status;
     private AI ai;
+    private boolean playerIsX;
 
     /*
      * TBD: Create additional private members if useful.
@@ -20,30 +21,28 @@ public class Game {
      * Construct a new Game according to the given parameters.
      */
     public Game(boolean playerIsX, boolean challenging) {
-        /*
-         * TBD
-         */
-        return;
+        this.playerIsX = playerIsX;
+        this.status = GameStatus.IN_PROGRESS;
+        if(challenging == false){
+            this.ai = new DumbAI(!playerIsX);
+        }else{
+            this.ai = new SmartAI(!playerIsX);
+        }
     }
 
     /**
      * Return a copy of the board's current contents.
      */
     public Board getBoard() {
-        /*
-         * TBD
-         */
-        return null;
+        Board tempBoard = new Board(this.board, null);
+        return tempBoard;
     }
 
     /**
      * Get the game's status.
      */
     public GameStatus getStatus() {
-        /*
-         * TBD
-         */
-        return null;
+        return this.status;
     }
     
     /**
@@ -57,18 +56,22 @@ public class Game {
      *
      */
     public boolean placePlayerPiece(int i, int j) {
-        /*
-         * TBD
-         */
-        return false;
+        Move move = new Move(i, j, playerIsX?'X':'Y');
+        if((this.status == GameStatus.IN_PROGRESS) && ((i >= 0 && i <= 2)&&(j >= 0 && j <= 2)) && this.board.isSpaceEmpty(move)){
+            this.board = new Board(this.board, move);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
      * @precondition status == IN_PROGRESS
      */
     public void aiPlacePiece() {
-        /*
-         * TBD
-         */
+        Move move = this.ai.chooseMove(this.board);
+        if((this.status == GameStatus.IN_PROGRESS)){
+            this.board = new Board(this.board, move);
+        }
     }
 }
