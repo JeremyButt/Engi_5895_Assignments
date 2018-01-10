@@ -2,7 +2,8 @@ package com.zephyr;
 /**
  * An immutable class that represents the state of the 3×3 tic-tac-toe board.
  *
- * @author INSERT YOUR NAME(S) HERE
+ * @author Jeremy Butt - 201527710
+ *         Timothy Mather - 201527769
  */
 
 public class Board {

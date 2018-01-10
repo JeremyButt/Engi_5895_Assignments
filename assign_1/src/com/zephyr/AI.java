@@ -4,7 +4,8 @@ package com.zephyr;
  *
  * STUDENTS: Nothing to change here.
  *
- * @author INSERT YOUR NAME(S) HERE
+ * @author Jeremy Butt - 201527710
+ *         Timothy Mather - 201527769
  */
 
 public interface AI {

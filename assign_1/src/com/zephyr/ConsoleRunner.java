@@ -5,7 +5,8 @@ package com.zephyr;
  * ‘place’ methods in Game.  Prompts the user for inputs and outputs the state
  * of the board to the console.
  *
- * @author INSERT YOUR NAME(S) HERE
+ * @author Jeremy Butt - 201527710
+ *         Timothy Mather - 201527769
  */
 
 import java.util.Scanner;
