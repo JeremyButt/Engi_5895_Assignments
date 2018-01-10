@@ -41,8 +41,13 @@ public class Board {
                 if (j == 2){
                     boardString +='\n';
                 }
+                else {
+                    boardString += '|';
+                }
             }
-
+            if (i<2) {
+                boardString += "-----\n";
+            }
         }
         return boardString;
     }
