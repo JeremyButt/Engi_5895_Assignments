@@ -2,7 +2,8 @@ package com.zephyr;
 /**
  * Realization of AI interface using simplistic random placement strategy.
  *
- * @author INSERT YOUR NAME(S) HERE
+ * @author Jeremy Butt - 201527710
+ *         Timothy Mather - 201527769
  */
 
 import java.util.Random;

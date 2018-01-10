@@ -3,7 +3,8 @@ package com.zephyr;
  * Represents the logic of the game in terms of detecting wins or draws.  Also
  * places new pieces for the human player or AI.
  *
- * @author INSERT YOUR NAME(S) HERE
+ * @author Jeremy Butt - 201527710
+ *         Timothy Mather - 201527769
  */
 
 public class Game {
