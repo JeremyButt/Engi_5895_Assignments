@@ -16,7 +16,7 @@ public class Board {
     public Board() {
         for (int i=0; i<3; i++){
             for (int j=0; j<3; j++){
-                board[i][j] = ' ';
+                this.board[i][j] = ' ';
             }
         }
     }
@@ -26,9 +26,9 @@ public class Board {
      * 'move' to generate this board's state.
      */
     public Board(Board other, Move move) {
-        board = other.board;
+        this.board = other.board;
         if (move != null) {
-            board[move.getI()][move.getJ()] = move.getPiece();
+            this.board[move.getI()][move.getJ()] = move.getPiece();
         }
     }
     /**
@@ -38,7 +38,7 @@ public class Board {
         String boardString = "";
         for (int i=0; i<3; i++){
             for (int j=0;j<3;j++){
-                boardString += board[i][j];
+                boardString += this.board[i][j];
                 if (j == 2){
                     boardString +='\n';
                 }
@@ -58,7 +58,7 @@ public class Board {
      * be in the range [0, 2].
      */
     public char get(int i, int j) {
-        return board[i][j];
+        return this.board[i][j];
     }
     
     /**
@@ -67,7 +67,7 @@ public class Board {
     public boolean isFull() {
         for (int i=0; i<3; i++){
             for (int j=0; j<3;j++){
-                if(board[i][j] == ' '){
+                if(this.board[i][j] == ' '){
                     return false;
                 }
             }
