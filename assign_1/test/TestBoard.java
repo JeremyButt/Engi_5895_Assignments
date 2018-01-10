@@ -20,11 +20,6 @@ public class TestBoard {
     @Test
     public void testCreate(){
         Board board = new Board();
-        for (int i=0; i<3;i++) {
-            for (int j = 0; j < 3; j++) {
-                assert board.get(i, j) == ' ';
-            }
-        }
         assert board.isEmpty();
     }
 
