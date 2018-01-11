@@ -33,7 +33,6 @@ public class ConsoleRunner {
      */
     public ConsoleRunner() {
         this.gameStart();
-        this.gameStart();
         this.game = new Game(this.playerIsX, this.challenging);
     }
 
