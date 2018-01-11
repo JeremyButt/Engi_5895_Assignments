@@ -57,8 +57,8 @@ public class Game {
      */
     public boolean placePlayerPiece(int i, int j) {
         if((this.status == GameStatus.IN_PROGRESS) && ((i >= 0 && i <= 2)&&(j >= 0 && j <= 2)) && this.board.get(i,j)==' '){
-            this.board = new Board(this.board, new Move(i,j, this.playerIsX?'X':'Y'));
-            updateGameStatus(i,j, this.playerIsX?'X':'Y');
+            this.board = new Board(this.board, new Move(i,j, this.playerIsX?'X':'O'));
+            updateGameStatus(i,j, this.playerIsX?'X':'O');
             return true;
         }else{
             return false;
