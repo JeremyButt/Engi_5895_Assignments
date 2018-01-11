@@ -11,10 +11,7 @@ import java.util.Random;
 public class DumbAI implements AI {
     
     private Random random = new Random();
-
-    /*
-     * TBD: Create additional private members if useful.
-     */
+    private boolean aiIsX;
     
     /**
      * Construct a DumbAI.
@@ -23,15 +20,24 @@ public class DumbAI implements AI {
      *              the 'X'.
      */
     public DumbAI(boolean aiIsX) {
-        /*
-         * TBD
-         */
+        this.aiIsX = aiIsX;
     }
 
     public Move chooseMove(Board board) {
-        /*
-         * TBD
-         */
-        return null;
+        boolean empty = false;
+        int i=0;
+        int j=0;
+        while (!empty) {
+            i = random.nextInt(3);
+            j = random.nextInt(3);
+            empty = board.get(i, j)==' ';
+        }
+
+        if (this.aiIsX) {
+            return new Move(i,j,'X');
+        }
+        else {
+            return new Move(i,j,'O');
+        }
     }
 }
