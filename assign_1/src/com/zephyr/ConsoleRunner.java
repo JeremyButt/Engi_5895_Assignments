@@ -69,10 +69,11 @@ public class ConsoleRunner {
             } else {
                 System.out.println("Not a valid selection, please try again.");
             }
-
-
+        }
+        valid  = false;
+        while(!valid) {
             System.out.println("Do you want a challenge? (Y/N)");
-            response = this.scanner.next();
+            String response = this.scanner.next();
             if (response.matches("Y") || response.matches("y")) {
                 this.challenging = true;
                 valid = true;
@@ -82,9 +83,8 @@ public class ConsoleRunner {
             } else {
                 System.out.println("Not a valid selection, please try again.");
             }
-
+            }
 
         }
 
-    }
 }
