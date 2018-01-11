@@ -56,9 +56,9 @@ public class Game {
      *
      */
     public boolean placePlayerPiece(int i, int j) {
-        Move move = new Move(i, j, this.playerIsX?'X':'Y');
-        if((this.status == GameStatus.IN_PROGRESS) && ((i >= 0 && i <= 2)&&(j >= 0 && j <= 2)) && this.board.isSpaceEmpty(move)){
-            this.board = new Board(this.board, move);
+        if((this.status == GameStatus.IN_PROGRESS) && ((i >= 0 && i <= 2)&&(j >= 0 && j <= 2)) && this.board.get(i,j)==' '){
+            this.board = new Board(this.board, new Move(i,j, this.playerIsX?'X':'O'));
+            updateGameStatus(i,j, this.playerIsX?'X':'O');
             return true;
         }else{
             return false;
@@ -72,6 +72,51 @@ public class Game {
         Move move = this.ai.chooseMove(this.board);
         if((this.status == GameStatus.IN_PROGRESS)){
             this.board = new Board(this.board, move);
+            updateGameStatus(move.getI(),move.getJ(),move.getPiece());
         }
+    }
+
+    public void updateGameStatus(int x, int y, char piece){
+
+        GameStatus winStatus = piece=='X'?GameStatus.X_WON:GameStatus.O_WON;
+
+        for(int i=0;i<3;i++){
+            if(this.board.get(x,i)!=piece)
+                break;
+            if(i==2)
+                this.status = winStatus;
+        }
+
+        for(int i=0;i<3;i++){
+            if(this.board.get(i,y)!=piece)
+                break;
+            if(i==2)
+                this.status = winStatus;
+        }
+
+        if(x==y){
+            for(int i=0;i<3;i++){
+                if(this.board.get(i,i)!=piece)
+                    break;
+                if(i==2)
+                    this.status = winStatus;
+            }
+        }
+
+        if(x+y==2){
+            for(int i=0;i<3;i++){
+                if(this.board.get(i,2-i)!=piece)
+                    break;
+                if(i==2)
+                    this.status = winStatus;
+            }
+        }
+
+        if(this.board.isFull()){
+            this.status = GameStatus.DRAW;
+        }
+
+
+
     }
 }
