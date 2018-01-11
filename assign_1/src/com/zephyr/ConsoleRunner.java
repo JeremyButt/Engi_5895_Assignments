@@ -20,10 +20,10 @@ public class ConsoleRunner {
     private boolean playerIsX;
 
     private Game game;
-    
     // Use to process text input from the user.
     private Scanner scanner = new Scanner(System.in);
 
+    private boolean challenging;
     /*
      * TBD: Create additional private members if useful.
      */
@@ -31,13 +31,10 @@ public class ConsoleRunner {
     /**
      * Constructor
      */
-    public ConsoleRunner() {    
-        /*
-         * TBD
-         *
-         * Use the 'next' method of Scanner and the 'matches' of the String
-         * class to process user responses as strings.
-         */
+    public ConsoleRunner() {
+        this.gameStart(true);
+        this.gameStart(false);
+        this.game = new Game(this.playerIsX, this.challenging);
     }
 
     /**
@@ -53,6 +50,42 @@ public class ConsoleRunner {
          *
          * There is enough work to do here that you may want to introduce
          * private methods (i.e. helper methods).
+         *
+         *
          */
+    }
+
+    public void gameStart(boolean XY) {
+        boolean valid = false;
+        while (!valid) {
+            if (XY) {
+                System.out.println("Do you want to be X? (Y/N)\n");
+                String response = this.scanner.next();
+                if (response.matches("Y") || response.matches("y")) {
+                    this.playerIsX = true;
+                    valid = true;
+                } else if (response.matches("N") || response.matches("n")) {
+                    this.playerIsX = false;
+                    valid = true;
+                } else {
+                    System.out.println("Not a valid selection, please try again.");
+                }
+            }else{
+
+                System.out.println("Do you want a challenge? (Y/N)");
+                String response = this.scanner.next();
+                if (response.matches("Y") || response.matches("y")) {
+                    this.challenging = true;
+                    valid = true;
+                } else if (response.matches("N") || response.matches("n")) {
+                    this.challenging = false;
+                    valid = true;
+                } else {
+                    System.out.println("Not a valid selection, please try again.");
+                }
+
+            }
+        }
+
     }
 }
