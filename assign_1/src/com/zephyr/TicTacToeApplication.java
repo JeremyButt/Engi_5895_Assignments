@@ -10,10 +10,7 @@ package com.zephyr;
 public class TicTacToeApplication {
 
     public static void main(String[] args) {
-        /*
-         * TBD
-         */
-        System.out.print("Hello World! I Build properly!! :)");
-        return;
+        ConsoleRunner consoleRunner = new ConsoleRunner();
+        consoleRunner.mainLoop();
     }
 }

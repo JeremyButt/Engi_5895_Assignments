@@ -52,6 +52,56 @@ public class ConsoleRunner {
          *
          *
          */
+
+        while(this.game.getStatus() == GameStatus.IN_PROGRESS) {
+            if(playerIsX)
+                getAndMakePlayerMove();
+            else
+                getAndMakeAIMove();
+
+            if(this.game.getStatus() != GameStatus.IN_PROGRESS)
+                break;
+
+            printBoardAndGameStatus();
+
+            if(playerIsX)
+                getAndMakeAIMove();
+            else
+                getAndMakePlayerMove();
+
+            if(this.game.getStatus() != GameStatus.IN_PROGRESS)
+                break;
+
+            printBoardAndGameStatus();
+        }
+        printBoardAndGameStatus();
+    }
+
+    private void printBoardAndGameStatus(){
+        String gameStatus = this.game.getStatus()==GameStatus.IN_PROGRESS?"IN PROGRESS":"COMPLETED";
+        System.out.print("The Game is currently " + gameStatus + " !");
+        System.out.print(this.game.getBoard().toString());
+    }
+
+    private void getAndMakePlayerMove(){
+        boolean validMove = false;
+        while(!validMove) {
+            char playerPiece = this.playerIsX ? 'X' : 'O';
+            System.out.print("Where would you like to place your " + playerPiece + " piece?");
+            System.out.print("'I' Coordinate first.");
+            int i = this.scanner.nextInt();
+
+            System.out.print("'J' Coordinate next.");
+            int j = this.scanner.nextInt();
+
+            validMove = this.game.placePlayerPiece(i, j);
+            if(!validMove)
+                System.out.print("This is not a valid position.");
+        }
+    }
+
+    private void getAndMakeAIMove(){
+        this.game.aiPlacePiece();
     }
 
     public void gameStart() {
