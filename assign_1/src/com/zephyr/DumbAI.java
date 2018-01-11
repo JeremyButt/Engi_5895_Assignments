@@ -24,20 +24,23 @@ public class DumbAI implements AI {
     }
 
     public Move chooseMove(Board board) {
-        while (true){
-            int i = random.nextInt(3);
-            int j = random.nextInt(3);
-            if (this.aiIsX) {
-                Move move = new Move(i,j,'X');
-                if (board.isSpaceEmpty(move)){
-                    return move;
-                }
-            } else {
-                Move move = new Move(i,j,'O');
-                if (board.isSpaceEmpty(move)){
-                    return move;
-                }
-            }
+        char empty = 'z';
+        int i=0;
+        int j=0;
+        while (empty!=' ') {
+            i = random.nextInt(3);
+            j = random.nextInt(3);
+            empty = board.get(i, j);
+        }
+        Move move;
+        if (this.aiIsX) {
+            move = new Move(i,j,'X');
+            return move;
+        }
+
+        else {
+            move = new Move(i,j,'O');
+            return move;
         }
     }
 }

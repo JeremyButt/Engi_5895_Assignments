@@ -32,8 +32,8 @@ public class ConsoleRunner {
      * Constructor
      */
     public ConsoleRunner() {
-        this.gameStart(true);
-        this.gameStart(false);
+        this.gameStart();
+        this.gameStart();
         this.game = new Game(this.playerIsX, this.challenging);
     }
 
@@ -55,36 +55,36 @@ public class ConsoleRunner {
          */
     }
 
-    public void gameStart(boolean XY) {
+    public void gameStart() {
         boolean valid = false;
         while (!valid) {
-            if (XY) {
-                System.out.println("Do you want to be X? (Y/N)\n");
-                String response = this.scanner.next();
-                if (response.matches("Y") || response.matches("y")) {
-                    this.playerIsX = true;
-                    valid = true;
-                } else if (response.matches("N") || response.matches("n")) {
-                    this.playerIsX = false;
-                    valid = true;
-                } else {
-                    System.out.println("Not a valid selection, please try again.");
-                }
-            }else{
 
-                System.out.println("Do you want a challenge? (Y/N)");
-                String response = this.scanner.next();
-                if (response.matches("Y") || response.matches("y")) {
-                    this.challenging = true;
-                    valid = true;
-                } else if (response.matches("N") || response.matches("n")) {
-                    this.challenging = false;
-                    valid = true;
-                } else {
-                    System.out.println("Not a valid selection, please try again.");
-                }
-
+            System.out.println("Do you want to be X? (Y/N)\n");
+            String response = this.scanner.next();
+            if (response.matches("Y") || response.matches("y")) {
+                this.playerIsX = true;
+                valid = true;
+            } else if (response.matches("N") || response.matches("n")) {
+                this.playerIsX = false;
+                valid = true;
+            } else {
+                System.out.println("Not a valid selection, please try again.");
             }
+
+
+            System.out.println("Do you want a challenge? (Y/N)");
+            response = this.scanner.next();
+            if (response.matches("Y") || response.matches("y")) {
+                this.challenging = true;
+                valid = true;
+            } else if (response.matches("N") || response.matches("n")) {
+                this.challenging = false;
+                valid = true;
+            } else {
+                System.out.println("Not a valid selection, please try again.");
+            }
+
+
         }
 
     }
