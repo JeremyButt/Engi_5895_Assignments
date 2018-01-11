@@ -83,8 +83,8 @@ public class ConsoleRunner {
             } else {
                 System.out.println("Not a valid selection, please try again.");
             }
-            }
-
         }
+
+    }
 
 }

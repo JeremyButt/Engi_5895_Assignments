@@ -32,15 +32,12 @@ public class DumbAI implements AI {
             j = random.nextInt(3);
             empty = board.get(i, j)==' ';
         }
-        Move move;
-        if (this.aiIsX) {
-            move = new Move(i,j,'X');
-            return move;
-        }
 
+        if (this.aiIsX) {
+            return new Move(i,j,'X');
+        }
         else {
-            move = new Move(i,j,'O');
-            return move;
+            return new Move(i,j,'O');
         }
     }
 }
