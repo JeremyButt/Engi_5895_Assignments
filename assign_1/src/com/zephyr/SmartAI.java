@@ -20,7 +20,9 @@ public class SmartAI implements AI {
      *              the 'X'.
      */
     public SmartAI(boolean aiIsX) {
-        throw new UnsupportedOperationException("Not implemented.");
+
+        System.out.println("NERD!!");
+        System.exit(1);
     }
 
     public Move chooseMove(Board board) {
