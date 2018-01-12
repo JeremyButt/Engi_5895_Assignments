@@ -16,7 +16,7 @@ public class TestAI {
         int j = move.getJ();
 
         boolean iInRange = (i >= 0)&&(i <= 2);
-        boolean jInRange = (i >= 0)&&(i <= 2);
+        boolean jInRange = (j >= 0)&&(j <= 2);
 
         Assertions.assertTrue(iInRange, "I is not in range");
         Assertions.assertTrue(jInRange, "J is not in range");
