@@ -83,23 +83,29 @@ public class Game {
         for(int i=0;i<3;i++){
             if(this.board.get(x,i)!=piece)
                 break;
-            if(i==2)
+            if(i==2) {
                 this.status = winStatus;
+                return;
+            }
         }
 
         for(int i=0;i<3;i++){
             if(this.board.get(i,y)!=piece)
                 break;
-            if(i==2)
+            if(i==2) {
                 this.status = winStatus;
+                return;
+            }
         }
 
         if(x==y){
             for(int i=0;i<3;i++){
                 if(this.board.get(i,i)!=piece)
                     break;
-                if(i==2)
+                if(i==2) {
                     this.status = winStatus;
+                    return;
+                }
             }
         }
 
@@ -107,16 +113,22 @@ public class Game {
             for(int i=0;i<3;i++){
                 if(this.board.get(i,2-i)!=piece)
                     break;
-                if(i==2)
+                if(i==2) {
                     this.status = winStatus;
+                    return;
+                }
             }
         }
 
         if(this.board.isFull()){
             this.status = GameStatus.DRAW;
+            return;
         }
-
-
-
     }
+
+    //FOR TESTING PURPOSES
+    public void setBoard(Board board){
+        this.board = board;
+    }
+
 }

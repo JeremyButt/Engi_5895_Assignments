@@ -49,4 +49,38 @@ public class TestGame {
         assert(!game.getBoard().isEmpty() && !game.getBoard().isFull());
     }
 
+    @Test
+    public void testUpdateGameStatus(){
+        Game game = new Game(true, false);
+        Board board = new Board();
+    /*
+        X|O|X
+        -----
+        O|O|X
+        -----
+        X|X|O
+    */
+        Move moves[] = {
+                new Move(0,0,'X'),
+                new Move(0,2,'X'),
+                new Move(1,2,'X'),
+                new Move(2,0,'X'),
+                new Move(2,1,'X'),
+
+                new Move(0,1,'O'),
+                new Move(1,0,'O'),
+                new Move(1,1,'O'),
+                new Move(2,2,'O'),
+        };
+
+        for(Move move : moves){
+            board = new Board(board, move);
+        }
+
+        game.setBoard(board);
+        game.updateGameStatus(moves[8].getI(),moves[8].getJ(),moves[8].getPiece());
+
+        Assertions.assertEquals(game.getStatus(),GameStatus.DRAW,"Incorrect game status");
+    }
+
 }
