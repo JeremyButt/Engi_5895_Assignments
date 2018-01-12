@@ -23,6 +23,7 @@ public class SmartAI implements AI {
         throw new UnsupportedOperationException("Not implemented.");
     }
 
+    @Override
     public Move chooseMove(Board board) {
         throw new UnsupportedOperationException("Not implemented.");
     }
