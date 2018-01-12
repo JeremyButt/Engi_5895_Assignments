@@ -92,9 +92,16 @@ public class ConsoleRunner {
     }
 
     private void congratulateWinner(){
-        String winner = this.game.getStatus()==GameStatus.X_WON?"X":"O";
+        String winner = "";
+        if(this.game.getStatus()==GameStatus.X_WON)
+            winner = "Congratulations X!! :) ";
+        else if(this.game.getStatus()==GameStatus.O_WON)
+            winner = "Congratulations O!! :) ";
+        else if(this.game.getStatus()==GameStatus.DRAW)
+            winner = "This was a DRAW!! Good Work!! ";
+
         System.out.print("#######################################\n");
-        System.out.print("Congratulations " + winner + "!! :)\n");
+        System.out.print(winner + "\n");
         System.out.print("#######################################\n");
     }
 
