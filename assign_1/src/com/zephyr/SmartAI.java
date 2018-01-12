@@ -25,6 +25,7 @@ public class SmartAI implements AI {
         System.exit(1);
     }
 
+    @Override
     public Move chooseMove(Board board) {
         throw new UnsupportedOperationException("Not implemented.");
     }

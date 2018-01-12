@@ -23,6 +23,7 @@ public class DumbAI implements AI {
         this.aiIsX = aiIsX;
     }
 
+    @Override
     public Move chooseMove(Board board) {
         boolean empty = false;
         int i=0;
