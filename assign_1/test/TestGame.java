@@ -41,7 +41,6 @@ public class TestGame {
         Assertions.assertEquals('X',game.getBoard().get(0,0),"incorrect piece");
     }
 
-    @Disabled //remove after AI integration
     @Test
     public void testAIPlacePiece(){
         Game game = new Game(true, false);
