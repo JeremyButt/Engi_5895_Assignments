@@ -24,6 +24,6 @@ public class TestAI {
     }
     @Test
     public void testSmartAI(){
-        //Assertions.assertThrows(UnsupportedOperationException.class,() -> {SmartAI ai = new SmartAI(false);},"Not handling");
+        Assertions.assertThrows(UnsupportedOperationException.class,() -> {SmartAI ai = new SmartAI(false);},"Not handling");
     }
 }

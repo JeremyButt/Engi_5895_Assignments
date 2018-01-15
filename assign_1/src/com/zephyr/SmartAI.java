@@ -20,9 +20,7 @@ public class SmartAI implements AI {
      *              the 'X'.
      */
     public SmartAI(boolean aiIsX) {
-
-        System.out.println("NERD!!");
-        System.exit(1);
+        throw new UnsupportedOperationException("Not implemented.");
     }
 
     @Override
