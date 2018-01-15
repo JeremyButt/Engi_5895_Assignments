@@ -110,10 +110,11 @@ public class ConsoleRunner {
         while(!validMove) {
             char playerPiece = this.playerIsX ? 'X' : 'O';
             System.out.print("Where would you like to place your " + playerPiece + " piece?\n");
-            System.out.print("'I' Coordinate first.\n");
+            printCoordinates();
+            System.out.print("'X' Coordinate first.\n");
             int i = this.scanner.nextInt();
 
-            System.out.print("'J' Coordinate next.\n");
+            System.out.print("'Y' Coordinate next.\n");
             int j = this.scanner.nextInt();
 
             validMove = this.game.placePlayerPiece(i, j);
@@ -158,6 +159,9 @@ public class ConsoleRunner {
             }
         }
         printBreak();
+    }
+    public void printCoordinates(){
+        System.out.println("00|01|12\n---------\n10|11|12\n---------\n20|21|22");
     }
 
 }
