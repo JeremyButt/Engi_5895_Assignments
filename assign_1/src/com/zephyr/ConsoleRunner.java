@@ -118,7 +118,7 @@ public class ConsoleRunner {
                 System.out.print("'X' Coordinate first.\n");
                 try{
                     i = this.scanner.nextInt();
-                    if((0 < i)&(i < 3)){
+                    if((0 <= i)&(i < 3)){
                         break;
                     }else{
                         System.out.print("Not Valid 'X'! Between 0 and 2 please! \n");
@@ -133,7 +133,7 @@ public class ConsoleRunner {
                 System.out.print("'Y' Coordinate second.\n");
                 try{
                     j = this.scanner.nextInt();
-                    if((0 < j)&(j < 3)){
+                    if((0 <= j)&(j < 3)){
                         break;
                     }else{
                         System.out.print("Not Valid 'Y'! Between 0 and 2 please! \n");
