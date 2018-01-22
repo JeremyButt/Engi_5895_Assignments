@@ -130,7 +130,7 @@ public class ConsoleRunner {
             }
 
             while(true){
-                System.out.print("'Y' Coordinate first.\n");
+                System.out.print("'Y' Coordinate second.\n");
                 try{
                     j = this.scanner.nextInt();
                     if((0 < j)&(j < 3)){
