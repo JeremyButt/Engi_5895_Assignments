@@ -107,15 +107,42 @@ public class ConsoleRunner {
 
     private void getAndMakePlayerMove(){
         boolean validMove = false;
+        int i = 0;
+        int j = 0;
         while(!validMove) {
             char playerPiece = this.playerIsX ? 'X' : 'O';
             System.out.print("Where would you like to place your " + playerPiece + " piece?\n");
             printCoordinates();
-            System.out.print("'X' Coordinate first.\n");
-            int i = this.scanner.nextInt();
 
-            System.out.print("'Y' Coordinate next.\n");
-            int j = this.scanner.nextInt();
+            while(true){
+                System.out.print("'X' Coordinate first.\n");
+                try{
+                    i = this.scanner.nextInt();
+                    if((0 < i)&(i < 3)){
+                        break;
+                    }else{
+                        System.out.print("Not Valid 'X'! Between 0 and 2 please! \n");
+                    }
+                }catch(Exception e){
+                    System.out.print("Not Valid 'X'! Integer please! \n");
+                    scanner.next();
+                }
+            }
+
+            while(true){
+                System.out.print("'Y' Coordinate first.\n");
+                try{
+                    j = this.scanner.nextInt();
+                    if((0 < j)&(j < 3)){
+                        break;
+                    }else{
+                        System.out.print("Not Valid 'Y'! Between 0 and 2 please! \n");
+                    }
+                }catch(Exception e){
+                    System.out.print("Not Valid 'Y'! Integer please! \n");
+                    scanner.next();
+                }
+            }
 
             validMove = this.game.placePlayerPiece(i, j);
             if(!validMove)

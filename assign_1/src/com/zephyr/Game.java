@@ -26,7 +26,12 @@ public class Game {
         if(challenging == false){
             this.ai = new DumbAI(!playerIsX);
         }else{
-            this.ai = new SmartAI(!playerIsX);
+            try {
+                this.ai = new SmartAI(!playerIsX);
+            }catch (UnsupportedOperationException e){
+                System.out.print(e.getMessage());
+                System.exit(1);
+            }
         }
     }
 
