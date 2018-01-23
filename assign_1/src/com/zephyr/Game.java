@@ -13,10 +13,6 @@ public class Game {
     private AI ai;
     private boolean playerIsX;
 
-    /*
-     * TBD: Create additional private members if useful.
-     */
-
     /**
      * Construct a new Game according to the given parameters.
      */
@@ -85,6 +81,7 @@ public class Game {
 
         GameStatus winStatus = piece=='X'?GameStatus.X_WON:GameStatus.O_WON;
 
+        //Check the horizontal win scenario
         for(int i=0;i<3;i++){
             if(this.board.get(x,i)!=piece)
                 break;
@@ -94,6 +91,7 @@ public class Game {
             }
         }
 
+        //Check the vertical win scenario
         for(int i=0;i<3;i++){
             if(this.board.get(i,y)!=piece)
                 break;
@@ -103,6 +101,7 @@ public class Game {
             }
         }
 
+        //Check the diagonal win scenario
         if(x==y){
             for(int i=0;i<3;i++){
                 if(this.board.get(i,i)!=piece)
@@ -114,6 +113,7 @@ public class Game {
             }
         }
 
+        //Check the anti-diagonal (reverse diagonal) win scenario
         if(x+y==2){
             for(int i=0;i<3;i++){
                 if(this.board.get(i,2-i)!=piece)
@@ -125,6 +125,7 @@ public class Game {
             }
         }
 
+        //Check if board is full and no win
         if(this.board.isFull()){
             this.status = GameStatus.DRAW;
             return;
