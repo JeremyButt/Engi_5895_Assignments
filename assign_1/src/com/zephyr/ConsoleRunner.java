@@ -24,9 +24,7 @@ public class ConsoleRunner {
     private Scanner scanner = new Scanner(System.in);
 
     private boolean challenging;
-    /*
-     * TBD: Create additional private members if useful.
-     */
+
 
     /**
      * Constructor
@@ -41,22 +39,11 @@ public class ConsoleRunner {
      * when one party has won or there has been a draw.
      */
     public void mainLoop() {
-        /*
-         * TBD
-         *
-         * Use the 'nextInt' method of Scanner class to read user responses as
-         * integers.
-         *
-         * There is enough work to do here that you may want to introduce
-         * private methods (i.e. helper methods).
-         *
-         *
-         */
 
         while(this.game.getStatus() == GameStatus.IN_PROGRESS) {
-            if (playerIsX){
+            if (playerIsX)
                 getAndMakePlayerMove();
-            }else
+            else
                 getAndMakeAIMove();
 
             if(this.game.getStatus() != GameStatus.IN_PROGRESS)
@@ -66,9 +53,8 @@ public class ConsoleRunner {
 
             if(playerIsX)
                 getAndMakeAIMove();
-            else{
+            else
                 getAndMakePlayerMove();
-            }
 
             if(this.game.getStatus() != GameStatus.IN_PROGRESS)
                 break;
@@ -92,16 +78,16 @@ public class ConsoleRunner {
     }
 
     private void congratulateWinner(){
-        String winner = "";
+        String congratulations = "";
         if(this.game.getStatus()==GameStatus.X_WON)
-            winner = "Congratulations X!! :) ";
+            congratulations = "Congratulations X!! :) ";
         else if(this.game.getStatus()==GameStatus.O_WON)
-            winner = "Congratulations O!! :) ";
+            congratulations = "Congratulations O!! :) ";
         else if(this.game.getStatus()==GameStatus.DRAW)
-            winner = "This was a DRAW!! Good Work!! ";
+            congratulations = "This was a DRAW!! Good Work!! ";
 
         System.out.print("#######################################\n");
-        System.out.print(winner + "\n");
+        System.out.print(congratulations + "\n");
         System.out.print("#######################################\n");
     }
 
@@ -118,6 +104,7 @@ public class ConsoleRunner {
                 System.out.print("'X' Coordinate first.\n");
                 try{
                     i = this.scanner.nextInt();
+                    //valid input is 0-2
                     if((0 <= i)&(i < 3)){
                         break;
                     }else{
@@ -125,7 +112,7 @@ public class ConsoleRunner {
                     }
                 }catch(Exception e){
                     System.out.print("Not Valid 'X'! Integer please! \n");
-                    scanner.next();
+                    scanner.next(); // pull out invalid keystroke from scanner to allow for new input
                 }
             }
 
@@ -133,6 +120,7 @@ public class ConsoleRunner {
                 System.out.print("'Y' Coordinate second.\n");
                 try{
                     j = this.scanner.nextInt();
+                    //valid input is 0-2
                     if((0 <= j)&(j < 3)){
                         break;
                     }else{
@@ -140,7 +128,7 @@ public class ConsoleRunner {
                     }
                 }catch(Exception e){
                     System.out.print("Not Valid 'Y'! Integer please! \n");
-                    scanner.next();
+                    scanner.next(); // pull out invalid keystroke from scanner to allow for new input
                 }
             }
 
